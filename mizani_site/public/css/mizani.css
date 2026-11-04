@@ -1,0 +1,312 @@
+:root {
+	--mizani-teal: #0b7a6f;
+	--mizani-navy: #12304a;
+	--mizani-background: #f4f8f8;
+	--mizani-surface: #ffffff;
+	--mizani-border: #dce8e7;
+	--mizani-shadow: 0 20px 60px color-mix(in srgb, var(--mizani-navy) 12%, transparent);
+	--mizani-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.mizani-landing {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background: var(--mizani-background);
+	color: var(--mizani-navy);
+	font-family: var(--mizani-font-stack);
+}
+
+.mizani-shell {
+	width: min(1120px, calc(100% - 48px));
+	margin-inline: auto;
+}
+
+.mizani-header {
+	min-height: 96px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 24px;
+}
+
+.mizani-brand {
+	display: inline-flex;
+	align-items: center;
+}
+
+.mizani-brand img {
+	display: block;
+	width: auto;
+	max-width: min(220px, 42vw);
+	max-height: 48px;
+}
+
+.mizani-header-action,
+.mizani-primary-action {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	font-weight: 650;
+	text-decoration: none;
+	transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.mizani-header-action {
+	min-height: 44px;
+	padding: 0 20px;
+	border: 1px solid var(--mizani-teal);
+	color: var(--mizani-teal);
+}
+
+.mizani-header-action:hover,
+.mizani-header-action:focus-visible {
+	background: var(--mizani-teal);
+	color: var(--mizani-surface);
+	text-decoration: none;
+}
+
+.mizani-main {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-block: 64px 80px;
+}
+
+.mizani-hero {
+	max-width: 760px;
+	padding-block: 24px 72px;
+}
+
+.mizani-eyebrow {
+	margin: 0 0 20px;
+	color: var(--mizani-teal);
+	font-size: 0.82rem;
+	font-weight: 750;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.mizani-hero h1 {
+	margin: 0;
+	color: var(--mizani-navy);
+	font-size: clamp(2.8rem, 7vw, 5.7rem);
+	font-weight: 750;
+	letter-spacing: -0.065em;
+	line-height: 1.02;
+}
+
+.mizani-hero h1 span {
+	color: var(--mizani-teal);
+}
+
+.mizani-intro {
+	max-width: 650px;
+	margin: 28px 0 32px;
+	color: var(--mizani-navy);
+	font-size: clamp(1.05rem, 2vw, 1.25rem);
+	line-height: 1.7;
+	opacity: 0.82;
+}
+
+.mizani-primary-action {
+	min-height: 54px;
+	padding: 0 26px;
+	background: var(--mizani-teal);
+	color: var(--mizani-surface);
+	box-shadow: 0 10px 24px color-mix(in srgb, var(--mizani-teal) 18%, transparent);
+}
+
+.mizani-primary-action:hover,
+.mizani-primary-action:focus-visible {
+	transform: translateY(-2px);
+	background: var(--mizani-navy);
+	color: var(--mizani-surface);
+	text-decoration: none;
+}
+
+.mizani-stats {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	border-block: 1px solid var(--mizani-border);
+}
+
+.mizani-stat {
+	min-height: 112px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 7px;
+	padding: 18px 24px;
+	border-right: 1px solid var(--mizani-border);
+}
+
+.mizani-stat:first-child {
+	padding-left: 0;
+}
+
+.mizani-stat:last-child {
+	border-right: 0;
+}
+
+.mizani-stat strong {
+	color: var(--mizani-teal);
+	font-size: 1.7rem;
+	font-weight: 750;
+	line-height: 1;
+}
+
+.mizani-stat span {
+	color: var(--mizani-navy);
+	font-size: 0.95rem;
+	opacity: 0.78;
+}
+
+.mizani-footer {
+	border-top: 1px solid var(--mizani-border);
+}
+
+.mizani-footer-inner {
+	min-height: 84px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	padding-block: 20px;
+	color: var(--mizani-navy);
+	font-size: 0.9rem;
+}
+
+.mizani-footer-inner p {
+	margin: 0;
+}
+
+.mizani-footer-inner a {
+	color: var(--mizani-teal);
+	font-weight: 650;
+	text-decoration: none;
+}
+
+.mizani-footer-inner a:hover,
+.mizani-footer-inner a:focus-visible {
+	color: var(--mizani-navy);
+	text-decoration: underline;
+}
+
+body:has(.for-login) {
+	background: var(--mizani-background);
+	font-family: var(--mizani-font-stack);
+}
+
+body:has(.for-login) .page-content-wrapper {
+	min-height: 100vh;
+	padding-top: 0;
+}
+
+body .for-login {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	padding: 32px 20px;
+	background: var(--mizani-background);
+}
+
+body .for-login .login-content.page-card {
+	width: min(100%, 430px);
+	max-width: 430px;
+	padding: 36px;
+	border: 1px solid var(--mizani-border);
+	border-radius: 20px;
+	background: var(--mizani-surface);
+	box-shadow: var(--mizani-shadow);
+}
+
+.for-login .page-card-head img.app-logo {
+	max-height: 48px;
+}
+
+body .for-login .page-card .page-card-actions .btn-login,
+body .for-login .page-card .page-card-actions .btn-ldap-login {
+	border: 0;
+	border-radius: 10px;
+	background: var(--mizani-teal);
+	color: var(--mizani-surface);
+}
+
+body .for-login .page-card .page-card-actions .btn-login:hover,
+body .for-login .page-card .page-card-actions .btn-login:focus,
+body .for-login .page-card .page-card-actions .btn-login:active,
+body .for-login .page-card .page-card-actions .btn-ldap-login:hover,
+body .for-login .page-card .page-card-actions .btn-ldap-login:focus,
+body .for-login .page-card .page-card-actions .btn-ldap-login:active {
+	background: var(--mizani-navy);
+	color: var(--mizani-surface);
+}
+
+body .for-login a {
+	color: var(--mizani-teal);
+}
+
+body .for-login a:hover,
+body .for-login a:focus-visible {
+	color: var(--mizani-navy);
+}
+
+@media (max-width: 700px) {
+	.mizani-shell {
+		width: min(100% - 36px, 560px);
+	}
+
+	.mizani-header {
+		min-height: 80px;
+	}
+
+	.mizani-main {
+		padding-block: 48px 56px;
+	}
+
+	.mizani-hero {
+		padding-block: 20px 48px;
+	}
+
+	.mizani-stats {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.mizani-stat {
+		min-height: 104px;
+		padding-inline: 16px;
+		border-bottom: 1px solid var(--mizani-border);
+	}
+
+	.mizani-stat:first-child {
+		padding-left: 16px;
+	}
+
+	.mizani-stat:nth-child(2) {
+		border-right: 0;
+	}
+
+	.mizani-stat:nth-last-child(-n + 2) {
+		border-bottom: 0;
+	}
+
+	.mizani-footer-inner {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	body .for-login .login-content.page-card {
+		padding: 28px 22px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.mizani-header-action,
+	.mizani-primary-action {
+		transition: none;
+	}
+}

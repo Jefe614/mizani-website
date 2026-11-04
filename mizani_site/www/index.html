@@ -1,0 +1,44 @@
+{% extends "templates/base.html" %}
+
+{% block title %}Mizani Labs | ERP that balances your business.{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div class="mizani-landing">
+	<header class="mizani-header mizani-shell">
+		<a class="mizani-brand" href="/" aria-label="Mizani Labs home">
+			<img src="{{ mizani_logo }}" alt="Mizani Labs">
+		</a>
+		<a class="mizani-header-action" href="{{ '/login' if frappe.session.user == 'Guest' else '/app' }}">
+			{{ "Login →" if frappe.session.user == "Guest" else "Open ERP →" }}
+		</a>
+	</header>
+
+	<main class="mizani-main mizani-shell">
+		<section class="mizani-hero" aria-labelledby="mizani-hero-title">
+			<p class="mizani-eyebrow">Mizani Labs</p>
+			<h1 id="mizani-hero-title">ERP that balances<br><span>your business.</span></h1>
+			<p class="mizani-intro">Bring finance, stock, sales, point of sale and people together in one business system, designed for Kenyan SMEs.</p>
+			<a class="mizani-primary-action" href="/login">Sign in to your workspace</a>
+		</section>
+
+		<section class="mizani-stats" aria-label="Mizani Labs at a glance">
+			<div class="mizani-stat"><strong>17+</strong><span>businesses onboarded</span></div>
+			<div class="mizani-stat"><strong>8</strong><span>ERP modules</span></div>
+			<div class="mizani-stat"><strong>3</strong><span>simple monthly plans</span></div>
+			<div class="mizani-stat"><strong>Kenya</strong><span>local support</span></div>
+		</section>
+	</main>
+
+	<footer class="mizani-footer">
+		<div class="mizani-footer-inner mizani-shell">
+			<p>© Mizani Labs</p>
+			<p>Practical systems. Clear next steps. Local support.</p>
+			<a href="https://wa.me/254798257728">WhatsApp us</a>
+		</div>
+	</footer>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
